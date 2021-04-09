@@ -712,13 +712,7 @@
     (iter-gcd (coeff-list term-list)))
   
     ;(apply gcd (coeff-list term-list)))
-  ;(define (min-coeff term-list)
-   ; (define (iter min l)
-    ;  (cond ((null? l) min)
-     ;       (else (let ((abs-val (magnitude (car l))))
-      ;              (if (less? abs-val (magnitude min))
-       ;                 (iter abs-val (cdr l))
-        ;                (iter min (cdr l)))))))
+  
     ;(let ((coeff-l (coeff-list term-list)))
      ; (iter (magnitude (car coeff-l)) (cdr coeff-l))))
     ;(iter (magnitude (coeff (first-term term-list))) term-list)) 
