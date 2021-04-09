@@ -834,63 +834,7 @@
   (put 'rest-terms '(dense) (lambda (l) (tag (rest-terms l))))
   
   (put 'coeff-list 'dense (lambda (l) l))
-  ;(put 'coeff '(dense) coeff)
-  ;(put 'order '(integer) order)
- 
-
-  ;Operations on term lists
-  ;(define (add-terms l1 l2)
-  ;  (define (accu list1 list2 n1 n2)
-  ;    (cond ((and (< n1 0) (< n2 0)) (the-empty-termlist))
-  ;          
-  ;          ((> n1 n2) (adjoin-term
-  ;                      (first-term list1)
-  ;                      (accu (rest-terms list1) list2 (dec n1) n2)))
-  ;          ((< n1 n2) (adjoin-term (first-term list2)
-   ;                          (accu list1 (rest-terms list2) n1 (dec n2))))
-   ;         (else (adjoin-term
-   ;                (make-term (add (first-term list1) (first-term list2)))
-   ;                (accu (rest-terms list1) (rest-terms list2) (dec n1) (dec n2))))))
-   ; (accu l1 l2 (order l1) (order l2)))
-  
-  ;(define (mul-terms l1 l2)
-   ; (define (iter list1 n)
-   ;   (if (empty-termlist? list1) (the-empty-termlist)
-   ;       (add-terms
-   ;        (mul-term-by-all-terms (first-term list1) n l2)
-   ;        (iter (rest-terms list1) (dec n)))))
-   ; (iter l1 (order l1)))
-  
-  ;(define (mul-term-by-all-terms term order l)
-    ;(define (iter l n)
-   ;   (if (empty-termlist? l) (make-zeros order)
-    ;      (adjoin-term
-   ;        (make-term (mul term (first-term l)))
-    ;       (mul-term-by-all-terms term order (rest-terms l)))))
-    ;(iter l order))
-  ;(define (make-zeros n)
-  ;  (if (= n 0) '() (cons 0 (make-zeros (dec n)))))
-    
-  ;(define (zero? p-terms)
-  ;  (if (empty-termlist? p-terms) #t
-  ;      (if (=zero? (coeff (first-term p-terms)))
-   ;         (zero? (rest-terms p-terms))
-   ;         #f)))
-  ;(define (negate-l p-terms)
-  ;  (if (empty-termlist? p-terms) (the-empty-termlist)
-   ;     (adjoin-term
-   ;      (negate (first-term p-terms))
-   ;      (negate-l (rest-terms p-terms)))))
-  
-  (put 'make-dense-termlist 'dense make-from-coeff)
-  
-  ;(put 'add-terms '(dense dense) (lambda (dl1 dl2) (tag (add-terms dl1 dl2))))
-  ;(put 'mul-terms '(dense dense) (lambda (dl1 dl2) (tag (mul-terms dl1 dl2))))
-
-   
-  ;(put '=zero? '(dense) zero?)
-  ;(put 'negate '(dense) (lambda (termlist) (tag (negate-l termlist))))
-  
+  (put 'make-dense-termlist 'dense make-from-coeff) 
   )
 (install-dense-polynomial-package)
 
